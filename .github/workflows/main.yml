@@ -1,4 +1,4 @@
-name: IPTV All
+name: IPTV
 
 on:
   schedule:
