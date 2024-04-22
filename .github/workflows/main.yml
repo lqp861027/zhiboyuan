@@ -1,4 +1,4 @@
-name: IPTV
+name: itvlist
 
 on:
   schedule:
@@ -23,12 +23,24 @@ jobs:
       - name: Install dependencies
         run: pip install selenium requests futures eventlet
 
-      - name: Run IPTV
-        run: python ${{ github.workspace }}/IPTV.py
-- name: 提交更改
-run: |
-git config --local user.email "gs004209@163.com"
-git config --local user.name "lqp861027"
-git add .
-git commit *.txt -m "Add generated file"
-git push -f
+      - name: Run itv_all
+        run: python ${{ github.workspace }}/itv_all.py
+
+      #- name: Run cctv
+        #run: python ${{ github.workspace }}/cctv.py
+        
+      #- name: Run weishi
+        #run: python ${{ github.workspace }}/weishi.py
+        
+      #- name: Run qita
+        #run: python ${{ github.workspace }}/qita.py
+        
+      - name: 提交更改
+        run: |
+          git config --local user.email "gs004209@163.com"
+          git config --local user.name "lqp861027"
+          git add .
+          git commit *.txt -m "Add generated file"
+          git commit *.m3u -m "Add generated file"
+          #git pull --rebase
+          git push -f
