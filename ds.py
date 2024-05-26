@@ -122,7 +122,7 @@ def channel_key(channel_name):
 # 对频道进行排序
 results.sort(key=lambda x: channel_key(x[0]))
 
-result_counter = 8  # 每个频道需要的个数
+result_counter = 5  # 每个频道需要的个数
 
 with open("ds.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
